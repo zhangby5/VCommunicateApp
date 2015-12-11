@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.vc.app.dao.UserInfoVOMapper" >
+  <resultMap id="BaseResultMap" type="com.vc.app.model.UserInfoVO" >
+    <id column="cuserid" property="cuserid" jdbcType="VARCHAR" />
+    <result column="cusername" property="cusername" jdbcType="VARCHAR" />
+    <result column="cpassword" property="cpassword" jdbcType="VARCHAR" />
+    <result column="cemail" property="cemail" jdbcType="VARCHAR" />
+    <result column="fsex" property="fsex" jdbcType="INTEGER" />
+    <result column="cbirthday" property="cbirthday" jdbcType="TIMESTAMP" />
+    <result column="caddress" property="caddress" jdbcType="VARCHAR" />
+    <result column="ctel" property="ctel" jdbcType="VARCHAR" />
+    <result column="cqq" property="cqq" jdbcType="VARCHAR" />
+    <result column="cimage" property="cimage" jdbcType="VARCHAR" />
+    <result column="fstate" property="fstate" jdbcType="INTEGER" />
+    <result column="vdef1" property="vdef1" jdbcType="VARCHAR" />
+    <result column="vdef2" property="vdef2" jdbcType="VARCHAR" />
+    <result column="vdef3" property="vdef3" jdbcType="VARCHAR" />
+    <result column="vdef4" property="vdef4" jdbcType="VARCHAR" />
+    <result column="vdef5" property="vdef5" jdbcType="VARCHAR" />
+    <result column="vdef6" property="vdef6" jdbcType="VARCHAR" />
+    <result column="vdef7" property="vdef7" jdbcType="VARCHAR" />
+    <result column="vdef8" property="vdef8" jdbcType="VARCHAR" />
+    <result column="vdef9" property="vdef9" jdbcType="VARCHAR" />
+    <result column="vdef10" property="vdef10" jdbcType="VARCHAR" />
+    <result column="ts" property="ts" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    cuserid, cusername, cpassword, cemail, fsex, cbirthday, caddress, ctel, cqq, cimage, 
+    fstate, vdef1, vdef2, vdef3, vdef4, vdef5, vdef6, vdef7, vdef8, vdef9, vdef10, ts
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_info
+    where cuserid = #{cuserid,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectByUsername" resultType="java.lang.String" parameterType="java.lang.String" >
+    select cuserid
+    from t_user_info
+    where cusername = #{cusername,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectByEmail" resultType="java.lang.String" parameterType="java.lang.String" >
+    select cuserid
+    from t_user_info
+    where cemail = #{cemail,jdbcType=VARCHAR}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_user_info
+    where cuserid = #{cuserid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.vc.app.model.UserInfoVO">
+    insert into t_user_info (cusername, cpassword, 
+      cemail, fsex, cbirthday, 
+      caddress, ctel, cqq, 
+      cimage, fstate, vdef1, 
+      vdef2, vdef3, vdef4, 
+      vdef5, vdef6, vdef7, 
+      vdef8, vdef9, vdef10, 
+      ts)
+    values ( #{cusername,jdbcType=VARCHAR}, #{cpassword,jdbcType=VARCHAR}, 
+      #{cemail,jdbcType=VARCHAR}, #{fsex,jdbcType=INTEGER}, #{cbirthday,jdbcType=TIMESTAMP}, 
+      #{caddress,jdbcType=VARCHAR}, #{ctel,jdbcType=VARCHAR}, #{cqq,jdbcType=VARCHAR}, 
+      #{cimage,jdbcType=VARCHAR}, #{fstate,jdbcType=INTEGER}, #{vdef1,jdbcType=VARCHAR}, 
+      #{vdef2,jdbcType=VARCHAR}, #{vdef3,jdbcType=VARCHAR}, #{vdef4,jdbcType=VARCHAR}, 
+      #{vdef5,jdbcType=VARCHAR}, #{vdef6,jdbcType=VARCHAR}, #{vdef7,jdbcType=VARCHAR}, 
+      #{vdef8,jdbcType=VARCHAR}, #{vdef9,jdbcType=VARCHAR}, #{vdef10,jdbcType=VARCHAR}, 
+      #{ts,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.vc.app.model.UserInfoVO" >
+    insert into t_user_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cuserid != null" >
+        cuserid,
+      </if>
+      <if test="cusername != null" >
+        cusername,
+      </if>
+      <if test="cpassword != null" >
+        cpassword,
+      </if>
+      <if test="cemail != null" >
+        cemail,
+      </if>
+      <if test="fsex != null" >
+        fsex,
+      </if>
+      <if test="cbirthday != null" >
+        cbirthday,
+      </if>
+      <if test="caddress != null" >
+        caddress,
+      </if>
+      <if test="ctel != null" >
+        ctel,
+      </if>
+      <if test="cqq != null" >
+        cqq,
+      </if>
+      <if test="cimage != null" >
+        cimage,
+      </if>
+      <if test="fstate != null" >
+        fstate,
+      </if>
+      <if test="vdef1 != null" >
+        vdef1,
+      </if>
+      <if test="vdef2 != null" >
+        vdef2,
+      </if>
+      <if test="vdef3 != null" >
+        vdef3,
+      </if>
+      <if test="vdef4 != null" >
+        vdef4,
+      </if>
+      <if test="vdef5 != null" >
+        vdef5,
+      </if>
+      <if test="vdef6 != null" >
+        vdef6,
+      </if>
+      <if test="vdef7 != null" >
+        vdef7,
+      </if>
+      <if test="vdef8 != null" >
+        vdef8,
+      </if>
+      <if test="vdef9 != null" >
+        vdef9,
+      </if>
+      <if test="vdef10 != null" >
+        vdef10,
+      </if>
+      <if test="ts != null" >
+        ts,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cuserid != null" >
+        #{cuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="cusername != null" >
+        #{cusername,jdbcType=VARCHAR},
+      </if>
+      <if test="cpassword != null" >
+        #{cpassword,jdbcType=VARCHAR},
+      </if>
+      <if test="cemail != null" >
+        #{cemail,jdbcType=VARCHAR},
+      </if>
+      <if test="fsex != null" >
+        #{fsex,jdbcType=INTEGER},
+      </if>
+      <if test="cbirthday != null" >
+        #{cbirthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="caddress != null" >
+        #{caddress,jdbcType=VARCHAR},
+      </if>
+      <if test="ctel != null" >
+        #{ctel,jdbcType=VARCHAR},
+      </if>
+      <if test="cqq != null" >
+        #{cqq,jdbcType=VARCHAR},
+      </if>
+      <if test="cimage != null" >
+        #{cimage,jdbcType=VARCHAR},
+      </if>
+      <if test="fstate != null" >
+        #{fstate,jdbcType=INTEGER},
+      </if>
+      <if test="vdef1 != null" >
+        #{vdef1,jdbcType=VARCHAR},
+      </if>
+      <if test="vdef2 != null" >
+        #{vdef2,jdbcType=VARCHAR},
+      </if>
+      <if test="vdef3 != null" >
+        #{vdef3,jdbcType=VARCHAR},
+      </if>
+      <if test="vdef4 != null" >
+        #{vdef4,jdbcType=VARCHAR},
+      </if>
+      <if test="vdef5 != null" >
+        #{vdef5,jdbcType=VARCHAR},
+      </if>
+      <if test="vdef6 != null" >
+        #{vdef6,jdbcType=VARCHAR},
+      </if>
+      <if test="vdef7 != null" >
+        #{vdef7,jdbcType=VARCHAR},
+      </if>
+      <if test="vdef8 != null" >
+        #{vdef8,jdbcType=VARCHAR},
+      </if>
+      <if test="vdef9 != null" >
+        #{vdef9,jdbcType=VARCHAR},
+      </if>
+      <if test="vdef10 != null" >
+        #{vdef10,jdbcType=VARCHAR},
+      </if>
+      <if test="ts != null" >
+        #{ts,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.vc.app.model.UserInfoVO" >
+    update t_user_info
+    <set >
+      <if test="cusername != null" >
+        cusername = #{cusername,jdbcType=VARCHAR},
+      </if>
+      <if test="cpassword != null" >
+        cpassword = #{cpassword,jdbcType=VARCHAR},
+      </if>
+      <if test="cemail != null" >
+        cemail = #{cemail,jdbcType=VARCHAR},
+      </if>
+      <if test="fsex != null" >
+        fsex = #{fsex,jdbcType=INTEGER},
+      </if>
+      <if test="cbirthday != null" >
+        cbirthday = #{cbirthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="caddress != null" >
+        caddress = #{caddress,jdbcType=VARCHAR},
+      </if>
+      <if test="ctel != null" >
+        ctel = #{ctel,jdbcType=VARCHAR},
+      </if>
+      <if test="cqq != null" >
+        cqq = #{cqq,jdbcType=VARCHAR},
+      </if>
+      <if test="cimage != null" >
+        cimage = #{cimage,jdbcType=VARCHAR},
+      </if>
+      <if test="fstate != null" >
+        fstate = #{fstate,jdbcType=INTEGER},
+      </if>
+      <if test="vdef1 != null" >
+        vdef1 = #{vdef1,jdbcType=VARCHAR},
+      </if>
+      <if test="vdef2 != null" >
+        vdef2 = #{vdef2,jdbcType=VARCHAR},
+      </if>
+      <if test="vdef3 != null" >
+        vdef3 = #{vdef3,jdbcType=VARCHAR},
+      </if>
+      <if test="vdef4 != null" >
+        vdef4 = #{vdef4,jdbcType=VARCHAR},
+      </if>
+      <if test="vdef5 != null" >
+        vdef5 = #{vdef5,jdbcType=VARCHAR},
+      </if>
+      <if test="vdef6 != null" >
+        vdef6 = #{vdef6,jdbcType=VARCHAR},
+      </if>
+      <if test="vdef7 != null" >
+        vdef7 = #{vdef7,jdbcType=VARCHAR},
+      </if>
+      <if test="vdef8 != null" >
+        vdef8 = #{vdef8,jdbcType=VARCHAR},
+      </if>
+      <if test="vdef9 != null" >
+        vdef9 = #{vdef9,jdbcType=VARCHAR},
+      </if>
+      <if test="vdef10 != null" >
+        vdef10 = #{vdef10,jdbcType=VARCHAR},
+      </if>
+      <if test="ts != null" >
+        ts = #{ts,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where cuserid = #{cuserid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.vc.app.model.UserInfoVO" >
+    update t_user_info
+    set cusername = #{cusername,jdbcType=VARCHAR},
+      cpassword = #{cpassword,jdbcType=VARCHAR},
+      cemail = #{cemail,jdbcType=VARCHAR},
+      fsex = #{fsex,jdbcType=INTEGER},
+      cbirthday = #{cbirthday,jdbcType=TIMESTAMP},
+      caddress = #{caddress,jdbcType=VARCHAR},
+      ctel = #{ctel,jdbcType=VARCHAR},
+      cqq = #{cqq,jdbcType=VARCHAR},
+      cimage = #{cimage,jdbcType=VARCHAR},
+      fstate = #{fstate,jdbcType=INTEGER},
+      vdef1 = #{vdef1,jdbcType=VARCHAR},
+      vdef2 = #{vdef2,jdbcType=VARCHAR},
+      vdef3 = #{vdef3,jdbcType=VARCHAR},
+      vdef4 = #{vdef4,jdbcType=VARCHAR},
+      vdef5 = #{vdef5,jdbcType=VARCHAR},
+      vdef6 = #{vdef6,jdbcType=VARCHAR},
+      vdef7 = #{vdef7,jdbcType=VARCHAR},
+      vdef8 = #{vdef8,jdbcType=VARCHAR},
+      vdef9 = #{vdef9,jdbcType=VARCHAR},
+      vdef10 = #{vdef10,jdbcType=VARCHAR},
+      ts = #{ts,jdbcType=TIMESTAMP}
+    where cuserid = #{cuserid,jdbcType=VARCHAR}
+  </update>
+</mapper>

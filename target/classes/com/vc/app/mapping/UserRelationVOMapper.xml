@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.vc.app.dao.UserRelationVOMapper" >
+  <resultMap id="BaseResultMap" type="com.vc.app.model.UserRelationVO" >
+    <id column="cuserid" property="cuserid" jdbcType="VARCHAR" />
+    <result column="cfollowid" property="cfollowid" jdbcType="VARCHAR" />
+    <result column="ftype" property="ftype" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    cuserid, cfollowid, ftype
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_relation
+    where cuserid = #{cuserid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_user_relation
+    where cuserid = #{cuserid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.vc.app.model.UserRelationVO" >
+    insert into t_user_relation (cuserid, cfollowid, ftype
+      )
+    values (#{cuserid,jdbcType=VARCHAR}, #{cfollowid,jdbcType=VARCHAR}, #{ftype,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.vc.app.model.UserRelationVO" >
+    insert into t_user_relation
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cuserid != null" >
+        cuserid,
+      </if>
+      <if test="cfollowid != null" >
+        cfollowid,
+      </if>
+      <if test="ftype != null" >
+        ftype,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cuserid != null" >
+        #{cuserid,jdbcType=VARCHAR},
+      </if>
+      <if test="cfollowid != null" >
+        #{cfollowid,jdbcType=VARCHAR},
+      </if>
+      <if test="ftype != null" >
+        #{ftype,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.vc.app.model.UserRelationVO" >
+    update t_user_relation
+    <set >
+      <if test="cfollowid != null" >
+        cfollowid = #{cfollowid,jdbcType=VARCHAR},
+      </if>
+      <if test="ftype != null" >
+        ftype = #{ftype,jdbcType=INTEGER},
+      </if>
+    </set>
+    where cuserid = #{cuserid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.vc.app.model.UserRelationVO" >
+    update t_user_relation
+    set cfollowid = #{cfollowid,jdbcType=VARCHAR},
+      ftype = #{ftype,jdbcType=INTEGER}
+    where cuserid = #{cuserid,jdbcType=VARCHAR}
+  </update>
+</mapper>
