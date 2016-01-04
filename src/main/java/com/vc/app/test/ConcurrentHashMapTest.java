@@ -1,4 +1,4 @@
-package com.vc.test;
+package com.vc.app.test;
 
 import java.util.Iterator;
 import java.util.Set;
@@ -20,14 +20,12 @@ public class ConcurrentHashMapTest {
     final ConcurrentHashMapTest test = new ConcurrentHashMapTest();
     new Thread(new Runnable() {
 
-      @Override
       public void run() {
         test.iteratorMap();
       }
     }).start();
     new Thread(new Runnable() {
 
-      @Override
       public void run() {
         test.modifyMap();
       }

@@ -238,11 +238,6 @@
 			<artifactId>spring-data-mongodb</artifactId>
 			<version>1.8.1.RELEASE</version>
 		</dependency>
-		<dependency>
-			<groupId>otocloud</groupId>
-			<artifactId>otocloud-framework</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
-		</dependency>
 	</dependencies>
 	<build>
 		<finalName>VCommunicateApp</finalName>

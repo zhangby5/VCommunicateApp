@@ -1,4 +1,4 @@
-package com.vc.test;
+package com.vc.app.test;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -35,7 +35,6 @@ public class NetTest {
 
     private Socket so = null;
 
-    @Override
     public void run() {
       while (true) {
         BufferedReader br = null;

@@ -1,4 +1,4 @@
-package com.vc.test.pool;
+package com.vc.app.pool;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -13,7 +13,6 @@ public class SemaphoreTest {
       final int tid = i;
       Runnable run = new Runnable() {
 
-        @Override
         public void run() {
           try {
             lock.acquire();

@@ -1,4 +1,4 @@
-package com.vc.test.pool;
+package com.vc.app.pool;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -12,7 +12,6 @@ public class CountDownLatchTest {
     for (int i = 0; i < 10; i++) {
       Runnable run = new Runnable() {
 
-        @Override
         public void run() {
           System.out.println("要等待么？");
           try {
@@ -32,7 +31,6 @@ public class CountDownLatchTest {
       final int tid = i;
       Runnable samrun = new Runnable() {
 
-        @Override
         public void run() {
           System.out.println("我是第" + tid + "个");
           try {

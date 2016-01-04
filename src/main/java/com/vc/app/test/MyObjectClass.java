@@ -1,4 +1,4 @@
-package com.vc.test;
+package com.vc.app.test;
 
 public class MyObjectClass {
 

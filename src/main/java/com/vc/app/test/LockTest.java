@@ -1,4 +1,4 @@
-package com.vc.test;
+package com.vc.app.test;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -11,7 +11,6 @@ public class LockTest {
     final LockTest t = new LockTest();
     new Thread(new Runnable() {
 
-      @Override
       public void run() {
         try {
           t.process(Thread.currentThread().getName());
@@ -24,7 +23,6 @@ public class LockTest {
 
     Thread t1 = new Thread(new Runnable() {
 
-      @Override
       public void run() {
         try {
           t.process(Thread.currentThread().getName());

@@ -1,4 +1,4 @@
-package com.vc.test;
+package com.vc.app.test;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -15,14 +15,12 @@ public class CopyOnWriteArrayListTest {
     final CopyOnWriteArrayListTest test = new CopyOnWriteArrayListTest();
     new Thread(new Runnable() {
 
-      @Override
       public void run() {
         test.interatorList();
       }
     }).start();
     new Thread(new Runnable() {
 
-      @Override
       public void run() {
         test.modifyList();
       }

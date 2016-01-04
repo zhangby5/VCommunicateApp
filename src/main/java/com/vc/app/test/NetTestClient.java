@@ -1,4 +1,4 @@
-package com.vc.test;
+package com.vc.app.test;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -23,7 +23,6 @@ public class NetTestClient {
 
     private Socket so;
 
-    @Override
     public void run() {
 
       while (so.isConnected()) {

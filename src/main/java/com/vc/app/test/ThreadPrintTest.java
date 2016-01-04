@@ -1,4 +1,4 @@
-package com.vc.test;
+package com.vc.app.test;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
@@ -36,7 +36,6 @@ public class ThreadPrintTest {
       this.current = current;
     }
 
-    @Override
     public void run() {
       locks.lock();
       while (currentnum < allnum) {
@@ -62,7 +61,6 @@ public class ThreadPrintTest {
 
   public class ThreadA implements Runnable {
 
-    @Override
     public void run() {
       for (int i = 0; i < 100; i++) {
         synchronized (lock) {
@@ -83,7 +81,6 @@ public class ThreadPrintTest {
 
   public class ThreadB implements Runnable {
 
-    @Override
     public void run() {
       for (int i = 0; i < 100; i++) {
         synchronized (lock) {

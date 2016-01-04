@@ -1,4 +1,4 @@
-package com.vc.test;
+package com.vc.app.test;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -43,7 +43,6 @@ public class SingletonTest {
       this.cd = cd;
     }
 
-    @Override
     public void run() {
       this.objset.add(MyObjectClass.getInstance());
       cd.countDown();

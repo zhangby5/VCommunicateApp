@@ -1,4 +1,4 @@
-package com.vc.test.classes;
+package com.vc.app.test.classes;
 
 public class StringUtil {
 

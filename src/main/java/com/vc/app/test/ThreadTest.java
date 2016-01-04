@@ -1,4 +1,4 @@
-package com.vc.test;
+package com.vc.app.test;
 
 public class ThreadTest {
 
@@ -19,7 +19,6 @@ public class ThreadTest {
 
   public class ThreadA implements Runnable {
 
-    @Override
     public void run() {
       synchronized (obj) {
         try {
@@ -37,7 +36,6 @@ public class ThreadTest {
 
   public class ThreadB implements Runnable {
 
-    @Override
     public void run() {
       synchronized (obj) {
         try {
@@ -55,7 +53,6 @@ public class ThreadTest {
 
   public class ThreadC implements Runnable {
 
-    @Override
     public void run() {
       synchronized (obj) {
         try {

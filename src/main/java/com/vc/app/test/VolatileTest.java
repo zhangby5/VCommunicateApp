@@ -1,4 +1,4 @@
-package com.vc.test;
+package com.vc.app.test;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -19,7 +19,6 @@ public class VolatileTest {
     final VolatileTest test = new VolatileTest();
     for (int i = 0; i < 10; i++) {
       new Thread(new Runnable() {
-        @Override
         public void run() {
           for (int i = 0; i < 100000; i++) {
             test.increase();
