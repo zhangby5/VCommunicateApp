@@ -13,15 +13,15 @@
 				<enabled>true</enabled>
 			</snapshots>
 			<id>public</id>
-			<name>Public Repositories</name>
-			<url>http://127.0.0.1:8081/nexus/content/groups/public/</url>
+			<name>OTOCloud Snapshots</name>
+			<url>http://maven.yonyou.com/nexus/content/repositories/otocloud-snapshots/</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
 			<id>public</id>
-			<name>Public Repositories</name>
-			<url>http://127.0.0.1:8081/nexus/content/groups/public//</url>
+			<name>OTOCloud Snapshots</name>
+			<url>http://maven.yonyou.com/nexus/content/repositories/otocloud-snapshots/</url>
 		</pluginRepository>
 	</pluginRepositories>
 	<properties>
@@ -237,6 +237,11 @@
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-mongodb</artifactId>
 			<version>1.8.1.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>otocloud</groupId>
+			<artifactId>otocloud-framework</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 	<build>
